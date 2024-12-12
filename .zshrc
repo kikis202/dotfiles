@@ -60,4 +60,5 @@ setopt hist_find_no_dups
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/catppuccin.json)"
+export PATH=$PATH:$HOME/go/bin
 
