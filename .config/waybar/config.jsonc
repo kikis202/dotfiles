@@ -4,7 +4,7 @@
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["custom/music"],
-    "modules-right": ["pulseaudio", "backlight", "battery", "network", "clock", "tray", "custom/power"],
+    "modules-right": ["pulseaudio", "backlight", "custom/kbd_backlight", "battery", "network", "clock", "tray", "custom/power"],
     "hyprland/workspaces": {
          "disable-scroll": true,
          "sort-by-name": true,
@@ -32,6 +32,11 @@
         "format": "{icon}",
         "format-icons": ["", "", "", "", "", "", "", "", ""]
     },
+    "custom/kbd_backlight": {
+        "format": "󰌌",
+        "on-click": "brightnessctl -d asus::kbd_backlight set +1",
+        "on-click-right": "brightnessctl -d asus::kbd_backlight set 1-"
+    },
     "battery": {
         "states": {
             "warning": 30,
@@ -54,9 +59,8 @@
     },
  
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
         "format": "{icon}  {volume}%  {format_source}",
-        "format-bluetooth": "{icon}󰂯  {volume}%  {format_source}",
+        "format-bluetooth": "{icon} 󰂯  {volume}%  {format_source}",
         "format-source": "  {volume}%",
         "format-source-muted": "",
         "format-muted": "  {format_source}",
@@ -73,7 +77,7 @@
 		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
 		"menu-actions": {
 			"shutdown": "poweroff",
-			"reboot": "systemctl restart",
+			"reboot": "systemctl reboot",
 			"suspend": "systemctl suspend",
 			"hibernate": "systemctl hibernate"
 		}

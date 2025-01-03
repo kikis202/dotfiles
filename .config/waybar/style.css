@@ -38,6 +38,7 @@
 #custom-music,
 #tray,
 #backlight,
+#custom-kbd_backlight,
 #network,
 #clock,
 #battery,
@@ -71,11 +72,13 @@
   color: @red;
 }
 
-#backlight {
+#backlight,
+#custom-kbd_backlight{
   color: @yellow;
 }
 
-#backlight, #battery {
+#backlight,
+#battery {
     border-radius: 0;
 }
 
